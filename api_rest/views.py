@@ -138,6 +138,12 @@ def user_manager(request):
 
 
 
+
+
+
+
+
+
 #NOTE - Django's functions to use with data
         
 # def DjangoDB():
