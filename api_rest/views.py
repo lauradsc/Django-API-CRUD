@@ -66,14 +66,14 @@ def user_manager(request):
         try:
             if request.GET['user']:                         #NOTE - check if there's a parameter called user (/?user=xxxx&...)
 
-                user_nickname = request.GET['user']         #NOTE - find the parameter
+                UserNickname = request.GET['user']         #NOTE - find the parameter
 
                 try:
-                    user = User.objects.get(pk=user_nickname)   #NOTE - get the object data in DB
+                    User = User.objects.get(pk=UserNickname)   #NOTE - get the object data in DB
                 except:
                     return Response(status=status.HTTP_404_NOT_FOUND)
 
-                serializer = UserSerializer(user)           #NOTE - serialize object data into json
+                serializer = UserSerializer(User)           #NOTE - serialize object data into json
                 return Response(serializer.data)            #NOTE - return the serialized data
 
             else:
@@ -88,9 +88,9 @@ def user_manager(request):
 
     if request.method == 'POST':
 
-        new_user = request.data
+        NewUser = request.data
         
-        serializer = UserSerializer(data=new_user)
+        serializer = UserSerializer(data=NewUser)
 
         if serializer.is_valid(): #NOTE - serializer's function to validate data
             serializer.save()
@@ -105,16 +105,16 @@ def user_manager(request):
 
     if request.method == 'PUT':
 
-        nickname = request.data['user_nickname']
+        Nickname = request.data['user_nickname']
 
         try:
-            updated_user = User.objects.get(pk=nickname)
+            UpdateUser = User.objects.get(pk=Nickname)
         except:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
         print(request.data)
 
-        serializer = UserSerializer(updated_user, data=request.data)
+        serializer = UserSerializer(UpdateUser, data=request.data)
 
         if serializer.is_valid():
             serializer.save()
@@ -129,9 +129,11 @@ def user_manager(request):
 
     if request.method == 'DELETE':
 
+        Nickname = request.query_params.get('user')
+
         try:
-            user_to_delete = User.objects.get(pk=request.data['user_nickname'])
-            user_to_delete.delete()
+            UserToDelete = User.objects.get(pk=Nickname)
+            UserToDelete.delete()
             return Response(status=status.HTTP_202_ACCEPTED)
         except:
             return Response(status=status.HTTP_400_BAD_REQUEST)
