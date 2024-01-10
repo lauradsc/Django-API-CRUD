@@ -29,3 +29,9 @@
 <p>I use VSCODE, so i press the F1 key and type " Python Select Interpreter" and the select the interpreter using venv.</p>
 
 
+<h3>Here some prints of the requisitions bringing data and their status:</h3>
+
+<img src="https://github.com/lauradsc/Django-API-CRUD/assets/99484087/11813255-7bcd-4eb5-b1bb-7040263f745a">
+
+
+
