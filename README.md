@@ -7,6 +7,7 @@
 
 - Django REST Framework to create APIs Restful <br>
 - Django corsheaders to allow my project to be accessed
+- Used Insomnia to test API
 
 <h3>Instalation</h3>
 
