@@ -28,6 +28,9 @@
 <b>⚠️Don't forget to configurate your Python Select Interpreter to work in the venv‼⚠️</b>
 <p>I use VSCODE, so i press the F1 key and type " Python Select Interpreter" and the select the interpreter using venv.</p>
 
+<h3>Here's a quick video to show you the functions/requisitions:</h3>
+
+https://github.com/lauradsc/Django-API-CRUD/assets/99484087/39f5452a-d3cc-4a3d-a516-9533b6d38925
 
 
 
